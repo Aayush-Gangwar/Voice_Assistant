@@ -1,5 +1,5 @@
 # Voice_Assistant
-#### This was my attempt to make a voice assistant similar to JARVIS.
+#### This was my attempt to make a voice assistant similar to JARVIS with face lock security.
 #### It can do a lot of cool things and automate your daily tasks you do on your personal computers/laptops.
 
 ## Built with
@@ -11,6 +11,7 @@
 #### For a cool demo of this project watch this [Video]()
 
 It can do a lot of cool things, some of them being:
+
 -Have face lock security
 - Greet user
 - sleep and wake mode
@@ -35,3 +36,22 @@ It can do a lot of cool things, some of them being:
 - Can switch the window
 - Can take screenshot and save it with custom filename
 - Has a cool Graphical User Interface
+- GUI have button to directly open some apps
+
+## API Keys
+To run this program you will require a wolframaalpha API keys. Register your API key by clicking the following link
+
+- [Wolframalpha](https://www.wolframalpha.com/)
+
+## Code Structure
+
+
+    │── utils               # GUI images/ gifs
+    ├── jarvis.ui           # GUI file (in .ui format)
+    ├── jarvisui.py         # GUI file (in .py format)
+    ├── main.py             # main driver program of Jarvis
+    ├── jarvis_gui.py       # main exe file(linked GUI with main.py file)
+    ├── setup.py            #code to hide cmd window while executing the program
+    ├── requirements.txt    # all dependencies of the program
+
+- The code structure if pretty simple. The code is completely modularized and is highly customizable.

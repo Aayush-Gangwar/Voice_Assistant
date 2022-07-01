@@ -38,6 +38,18 @@ It can do a lot of cool things, some of them being:
 - Has a cool Graphical User Interface
 - GUI have button to directly open some apps
 
+## Installation
+
+- Clone the repo
+- Have to edit some things in main.py file-
+    ```email = "<your_email>"
+    email_password = "<your_email_password>"
+    wolframalpha_id = "<your_wolframalpha_id>"
+- Install all the requirements by just hitting ``` pip install -r requirements.txt ```
+- Install PyAudio from wheel file by following instructions given [here](https://stackoverflow.com/a/55630212)
+- Run the program by ``` python jarvis_gui.py ```
+- Enjoy the voice assistant.
+
 ## API Keys
 To run this program you will require a wolframaalpha API keys. Register your API key by clicking the following link
 
@@ -55,3 +67,9 @@ To run this program you will require a wolframaalpha API keys. Register your API
     ├── requirements.txt    # all dependencies of the program
 
 - The code structure if pretty simple. The code is completely modularized and is highly customizable.
+
+## Future Improvements
+- Generalized conversations can be made possible by incorporating Natural Language Processing
+- Addying more languages with english
+- GUI can be made more nicer to look at and functional
+- More functionalities can be added.

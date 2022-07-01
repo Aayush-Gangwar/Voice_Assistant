@@ -44,7 +44,7 @@ It can do a lot of cool things, some of them being:
 
 ## Installation
 
-- Clone the repo
+- Clone the repo.
 - Have to edit some things in main.py file-
     ```
     email = "<your_email>"

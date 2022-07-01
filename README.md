@@ -42,7 +42,8 @@ It can do a lot of cool things, some of them being:
 
 - Clone the repo
 - Have to edit some things in main.py file-
-    ```email = "<your_email>"
+    ```
+    email = "<your_email>"
     email_password = "<your_email_password>"
     wolframalpha_id = "<your_wolframalpha_id>"
 - Install all the requirements by just hitting ``` pip install -r requirements.txt ```

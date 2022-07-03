@@ -50,3 +50,23 @@ def acceptcommands():   # module for accepting voice input from user and recogni
         # speak("can't recognize..please speak again...")
         return "NONE"
     return query
+
+contacts={"xyz":["+9191xxxxxxxx","user_mail@gmail.com"]}   #sample contact list for sending message,emails.
+
+def accept_wake_commands(wake):   # capture the wake up command from user.
+    c = sr.Recognizer()
+    with sr.Microphone() as source:
+        speak("I am at sleep mode sir")
+        c.pause_threshold=0.5
+        c.energy_threshold= 100
+        audio=c.listen(source)
+
+    try:
+        print("sleeping")
+        query=c.recognize_google(audio,language="en-in")
+        speak(query)
+        print(f"user said: {query}")
+    except Exception as error:
+        pass
+        return "NONE"
+    return query

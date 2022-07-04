@@ -70,3 +70,38 @@ def accept_wake_commands(wake):   # capture the wake up command from user.
         pass
         return "NONE"
     return query
+
+access=False
+def face_lock():    # security module ...unlock the system by recognizes the correct user face id only.
+    count=2
+    base = cv2.imread("opencv_frame_base.png")   # original user face id...(unlock system by comparing new faces from this base image).
+    try:
+        hsv_base = cv2.cvtColor(base, cv2.COLOR_BGR2HSV)
+    except:
+        count=1
+        speak("Welcome sir")
+        speak("I am your voice assistant")
+        speak("give me your face id for security")
+    if(count==2):
+        speak("Show your face for access")
+        cam = cv2.VideoCapture(0)
+        cv2.namedWindow("test")
+        img_counter = 0
+        while True:
+            ret, frame = cam.read()
+            if not ret:
+                speak("failed to grab frame")
+                break
+            cv2.imshow("test", frame)
+        
+            k = cv2.waitKey(1)
+            if k%256 == 27:
+                # ESC pressed
+                speak("Escape hit for closing...")
+                break
+            elif k%256 == 32:
+                # SPACE pressed
+                img_name = "opencv_frame_{}.png".format(img_counter)        # accept present user face id..
+                cv2.imwrite(img_name, frame)
+                print("{} written!".format(img_name))
+                img_counter += 1

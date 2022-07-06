@@ -105,3 +105,32 @@ def face_lock():    # security module ...unlock the system by recognizes the cor
                 cv2.imwrite(img_name, frame)
                 print("{} written!".format(img_name))
                 img_counter += 1
+    else:
+        c=0
+        while(c<2):
+            cam = cv2.VideoCapture(0)
+            cv2.namedWindow("test")
+            img_counter = 0
+            while True:
+                ret, frame = cam.read()
+                if not ret:
+                    speak("failed to grab frame")
+                    break
+                cv2.imshow("test", frame)
+            
+                k = cv2.waitKey(1)
+                if k%256 ==27:
+                    # ESC pressed
+                    speak("Escape hit for closing...")
+                    break
+                elif k%256 == 32:
+                    # SPACE pressed
+                    if(c==0):
+                        img_name = "opencv_frame_base.png".format(img_counter)          # accept base face id..in case it's not present in directory.
+                        cv2.imwrite(img_name, frame)
+                        c+=1
+                    else:
+                        img_name = "opencv_frame_{}.png".format(img_counter)           # accept present user face id..
+                        cv2.imwrite(img_name, frame)
+                        img_counter += 1
+                        c+=1

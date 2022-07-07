@@ -178,3 +178,12 @@ def temp(query):    # temperature module..tells the temperature of place present
     except:
         speak("There is some error..please speak again")
 
+def wolfram(query):    # for maths and science
+    api_id ="TT4H6R-U4KUUXQUXK"
+    requester=wolframalpha.Client(api_id)
+    requested=requester.query(query)
+    try:
+        ans=next(requested.results).text
+        return ans
+    except:
+        Speak("Sorry, sir not got any answer")

@@ -167,3 +167,14 @@ def face_lock():    # security module ...unlock the system by recognizes the cor
     else:
         speak("Access denied")
     cv2.waitKey(0)
+
+def temp(query):    # temperature module..tells the temperature of place present in query(user voice input).
+    url= f"https://www.google.com/search?q={query}"
+    try:
+        r=requests.get(url)
+        data=BeautifulSoup(r.text,"html.parser")
+        temp=data.find("div",class_="BNeawe").text
+        speak(temp)
+    except:
+        speak("There is some error..please speak again")
+

@@ -212,3 +212,22 @@ def My_location():   # to got user location.
     city=r['city']
     country=r["country"]
     speak(f"Sir,you are in {city,country}")
+
+def wish():        # gretting module...wish user according to time.
+    hour=int(datetime.datetime.now().hour)
+    if(hour>=0 and  hour<=12):
+        speak("Good morning Sir")
+    elif(hour >=12 and   hour<=16):
+        speak("Good afternoon Sir")
+
+    elif(hour>=16 and  hour<=19):
+        speak("Good evening Sir")
+    else:
+        speak("Good night Sir")
+    speak("Myself jarvis!,Your personal voice assistant. How may i help you.")
+
+def date():      # date function...show current date.
+    today=datetime.datetime.now()
+    format = '%I:%M %p'
+    date = today.strftime(format)
+    speak(date)

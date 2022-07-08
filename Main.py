@@ -203,3 +203,12 @@ def calculation(query):  # for maths calculations.
         speak(f"answer is {result}")
     except:
         speak("Sorry sir, did not got the answer")
+
+def My_location():   # to got user location.
+    ip_ad=requests.get('https://api.ipify.org').text
+    url= 'https://get.geojs.io/v1/ip/geo/'+ip_ad+".json"    # revel user location.
+    r=requests.get(url)
+    r=r.json()
+    city=r['city']
+    country=r["country"]
+    speak(f"Sir,you are in {city,country}")

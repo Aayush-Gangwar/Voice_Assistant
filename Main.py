@@ -187,3 +187,19 @@ def wolfram(query):    # for maths and science
         return ans
     except:
         Speak("Sorry, sir not got any answer")
+
+def calculation(query):  # for maths calculations.
+    query=str(query)
+    query=query.replace("jarvis","")
+    query=query.replace("plus","+")
+    query=query.replace("multiply","*")
+    query=query.replace("into","+")
+    query=query.replace("minus","-")
+    query=query.replace("divide","/")
+
+    query=str(query)
+    try:
+        result=wolfram(query)
+        speak(f"answer is {result}")
+    except:
+        speak("Sorry sir, did not got the answer")

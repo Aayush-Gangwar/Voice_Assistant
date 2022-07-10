@@ -231,3 +231,30 @@ def date():      # date function...show current date.
     format = '%I:%M %p'
     date = today.strftime(format)
     speak(date)
+
+def whatsapp_message():     # communication module...help in sending whatsapp message to person mention in query.
+    speak("Tell me the name of Person!.")
+    name=acceptcommands().lower()
+
+    if(name in contacts):
+        speak("Tell me the message...")
+        message=acceptcommands()
+        phone_no=contacts[name][0]
+        try:
+            pywhatkit.sendwhatmsg_instantly(phone_no, message)
+            speak("message sent")
+        except:
+            speak("error in sending message..please try again")
+    
+    else:
+        speak("Tell me the phone number")
+        phone_no=(acceptcommands())
+        phone_no="+91"+phone_no
+        speak("Tell me the message...")
+        message=acceptcommands()
+        try:
+            pywhatkit.sendwhatmsg_instantly(phone_no, message)
+            speak("message sent")
+        except:
+            speak("error in sending message")
+    

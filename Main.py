@@ -257,4 +257,39 @@ def whatsapp_message():     # communication module...help in sending whatsapp me
             speak("message sent")
         except:
             speak("error in sending message")
-    
+
+def send_mail():          # communication module...help in sending mail to person mention in query.
+    server=smtplib.SMTP("smtp.gmail.com",587)
+    server.ehlo()
+    server.starttls()
+    jarvis_mail_id="jarvisai889@gmail.com"
+    jarvis_id_password="JarvisAi@2003"
+    server.login(jarvis_mail_id,jarvis_id_password)
+
+    speak("Tell me the name of Person!.")
+    name=acceptcommands().lower()
+
+    if(name in contacts):
+        speak("Tell me the subject...")
+        subject=acceptcommands()
+        speak("Tell me the message...")
+        message=acceptcommands()
+        email_receiver=contacts[name][1]
+        try:
+            server.sendmail(jarvis_mail_id,[email_receiver],message)
+            speak("Mail sent to"+name)
+        except:
+            speak("Error in sending mail..try again")
+        server.close()
+            
+    else:
+        speak("Tell me the message...")
+        message=acceptcommands()
+        speak("Tell me the recievers gmail id")
+        email_receiver=acceptcommands()+"@gmail.com"
+        try:
+            server.sendmail(jarvis_mail_id,[email_receiver],message)
+            speak("Mail sent")
+        except:
+            speak("Error in sending mail..try again")
+    server.close()

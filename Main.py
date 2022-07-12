@@ -307,3 +307,12 @@ def screen_shot():   # for clicking sceenshots
     ss=pyautogui.screenshot()
     ss.save("D:\\ss.png")
     speak("Screenshot is taken sir")
+
+def wikipedia_search(query):    # web search module..help in scrapping or browse anything on wikipedia.
+    speak("searching wikipedia")
+    query=query.replace("wikipedia","")
+    try:
+        result= wikipedia.summary(query,sentences=2)
+        speak(result)
+    except:
+        speak("There is some error..please speak again sir.")

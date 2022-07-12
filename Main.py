@@ -302,3 +302,8 @@ def speedtest():     #to get the user internet speed.
     upload=int(int(upload)/8000)
     download=int(int(download)/8000)
     speak(f"Sir,your downloading speed is{download} and uploading speed is{upload}")
+
+def screen_shot():   # for clicking sceenshots
+    ss=pyautogui.screenshot()
+    ss.save("D:\\ss.png")
+    speak("Screenshot is taken sir")

@@ -293,3 +293,12 @@ def send_mail():          # communication module...help in sending mail to perso
         except:
             speak("Error in sending mail..try again")
     server.close()
+
+def speedtest():     #to get the user internet speed.
+    speak("Checking internet speed")
+    speed=speedtest.Speedtest()
+    upload=speed.upload()
+    download=speed.download()
+    upload=int(int(upload)/8000)
+    download=int(int(download)/8000)
+    speak(f"Sir,your downloading speed is{download} and uploading speed is{upload}")

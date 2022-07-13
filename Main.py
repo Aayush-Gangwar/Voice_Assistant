@@ -262,8 +262,8 @@ def send_mail():          # communication module...help in sending mail to perso
     server=smtplib.SMTP("smtp.gmail.com",587)
     server.ehlo()
     server.starttls()
-    jarvis_mail_id="jarvisai889@gmail.com"
-    jarvis_id_password="JarvisAi@2003"
+    jarvis_mail_id="user_mail_id@gmail.com"
+    jarvis_id_password="id_password"
     server.login(jarvis_mail_id,jarvis_id_password)
 
     speak("Tell me the name of Person!.")

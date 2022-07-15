@@ -316,3 +316,51 @@ def wikipedia_search(query):    # web search module..help in scrapping or browse
         speak(result)
     except:
         speak("There is some error..please speak again sir.")
+
+def google_search(query):         # web search module..help in search anything on google.
+    speak("searching wikipedia")
+    query=query.replace("wikipedia","")
+    try:
+        result= wikipedia.summary(query,sentences=2)
+        speak(result)
+    except:
+        speak("There is some error..please speak again sir.")
+    query=query.replace("jarvis","")
+    query=query.replace("google search","")
+    try:
+        pywhatkit.search(query)
+        speak("Done Sir")
+    except:
+        speak("there is some error..please speak again..")
+
+def open_site(query):            # function help in opening any site.
+    speak("okay sir..launching")
+    query=query.replace("jarvis","")
+    query=query.replace("website","")
+    site=query.replace("open","").lower()
+    site=site.replace(" ","")
+    try:
+        open_site="https://www."+site+".com/"
+        webbrowser.open(open_site)
+        speak("Launched sir")
+    except:
+        speak("There is some error..please speak again sir.")
+
+def chat_bot_module():           # chat bot function...user can chat according to inputs.
+    command1=["hello","wake up","hey","suno na","hi","utho","you there"]
+    reply1=["Hello sir,Welcome Back!","Always for you sir","How can i Help you"]
+    command2=["bye","go and sleep"]
+    reply2=["bye sir","nice meeting you"]
+    speak("okay sir..chat bot activated start chatting")
+    text=acceptcommands().lower()
+    try:
+        def chatterbot(text):
+            for word in text.split():
+                if word in command1:
+                    speak(random.choice(reply1))
+                elif word in command2:
+                    speak(random.choice(reply2))
+                else:
+                    speak("hmm sir.")
+    except:
+        speak("Sir..please chat again")

@@ -1,6 +1,6 @@
 # Voice_Assistant
-#### This was my attempt to make a voice assistant similar to JARVIS with face lock security.
-#### It can do a lot of cool things and automate your daily tasks you do on your personal computers/laptops.
+#### This was my attempt to make a voice assistant  with face lock security.
+#### It can do a lot of things and automate your daily tasks you do on your personal laptops.
 
 ## Built with
 
